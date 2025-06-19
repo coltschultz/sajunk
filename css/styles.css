@@ -1,0 +1,604 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #374151;
+    background-color: #f9fafb;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: #ffffff;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+}
+
+.nav-menu li {
+    margin: 0 1rem;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav-menu a:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+    background: url('../images/hero.jpg') center/cover no-repeat;
+    width: 100vw;
+    max-width: none;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    left: 0;
+    right: 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(30, 58, 138, 0.7), rgba(0, 0, 0, 0.5));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Form Styles */
+.hero-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-form input,
+.hero-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #374151;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+.hero-form input:focus,
+.hero-form textarea:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+.hero-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.hero-form button {
+    background-color: #ea580c;
+    color: #ffffff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.hero-form button:hover {
+    background-color: #c2410c;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Sections */
+section {
+    max-width: none;
+    width: 100vw;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+/* Inner container for content */
+.section-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* About Section */
+#about {
+    background-color: #ffffff;
+    box-shadow: none;
+}
+
+#about h2 {
+    color: #1e3a8a;
+}
+
+#about .grid {
+    margin-top: 2rem;
+}
+
+/* Services Section */
+#services {
+    background: #f9fafb;
+}
+
+#services h2 {
+    color: #1e3a8a;
+}
+
+/* Pricing Section */
+#pricing {
+    background-color: #ffffff;
+}
+
+#pricing h2 {
+    color: #1e3a8a;
+}
+
+/* San Antonio Section */
+#san-antonio {
+    background: url('../images/san-antonio-bg.jpg') center/cover no-repeat;
+    color: #374151;
+}
+
+#san-antonio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+#san-antonio h2,
+#san-antonio h3,
+#san-antonio p {
+    position: relative;
+    z-index: 1;
+}
+
+#san-antonio h3 {
+    color: #ea580c;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #ffffff;
+}
+
+#contact h2 {
+    color: #1e3a8a;
+}
+
+/* FAQ Section */
+#faq {
+    supervisory-background-color: #ffffff;
+}
+
+#faq h2 {
+    color: #1e3a8a;
+}
+
+/* Blog Section */
+#blog {
+    background-color: #f9fafb;
+}
+
+#blog h2 {
+    color: #1e3a8a;
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+    color: #ffffff;
+    text-align: center;
+    max-width: none;
+    width: 100vw;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta .btn {
+    background-color: #ea580c;
+    color: #ffffff;
+}
+
+/* Headings */
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #3b82f6;
+    margin: 0.5rem auto;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ea580c;
+    margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1.1rem;
+    color: #374151;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Cards */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: #3b82f6;
+}
+
+.card p {
+    color: #4b5563;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: #ea580c;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #c2410c;
+    transform: scale(1.05);
+}
+
+/* Sticky CTA */
+.sticky-cta {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #ea580c;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.sticky-cta:hover {
+    background-color: #c2410c;
+    transform: translateY(-4px);
+}
+
+/* Form (Contact Section) */
+form:not(.hero-form) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9fafb;
+    border-radius: 12px;
+}
+
+form:not(.hero-form) input,
+form:not(.hero-form) textarea {
+    padding: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+form:not(.hero-form) input:focus,
+form:not(.hero-form) textarea:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+form:not(.hero-form) button {
+    background-color: #ea580c;
+    color: #ffffff;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+form:not(.hero-form) button:hover {
+    background-color: #c2410c;
+    transform: scale(1.05);
+}
+
+/* Accordion */
+.accordion {
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accordion summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: #1e3a8a;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.accordion summary:hover {
+    background-color: #f9fafb;
+}
+
+.accordion summary:focus {
+    outline: 2px solid #3b82f6;
+}
+
+.accordion p {
+    padding: 0 1rem 1rem;
+    color: #4b5563;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #1e3a8a;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 0.5rem 0;
+    }
+
+    .nav-menu a {
+        display: block;
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding: 2rem 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-form {
+        max-width: 90%;
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .sticky-cta {
+        padding: 0.875rem 1.75rem;
+        font-size: 0.95rem;
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-form input,
+    .hero-form textarea,
+    .hero-form button {
+        font-size: 0.85rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
