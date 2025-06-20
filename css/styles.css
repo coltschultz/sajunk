@@ -226,8 +226,9 @@ nav {
 section {
     max-width: none;
     width: 100vw;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem; /* Increased padding for more spacing */
     position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle divider */
 }
 
 /* Inner container for content */
@@ -239,11 +240,15 @@ section {
 /* About Section */
 #about {
     background-color: #ffffff;
-    box-shadow: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 #about h2 {
     color: #1e3a8a;
+}
+
+#about h2::after {
+    background-color: #3b82f6;
 }
 
 #about .grid {
@@ -259,13 +264,22 @@ section {
     color: #1e3a8a;
 }
 
+#services h2::after {
+    background-color: #ea580c; /* Distinct accent */
+}
+
 /* Pricing Section */
 #pricing {
     background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 #pricing h2 {
     color: #1e3a8a;
+}
+
+#pricing h2::after {
+    background-color: #3b82f6;
 }
 
 /* San Antonio Section */
@@ -291,26 +305,43 @@ section {
     z-index: 1;
 }
 
+#san-antonio h2 {
+    color: #1e3a8a;
+}
+
+#san-antonio h2::after {
+    background-color: #ea580c;
+}
+
 #san-antonio h3 {
     color: #ea580c;
 }
 
 /* Contact Section */
 #contact {
-    background-color: #ffffff;
+    background-color: #f9fafb;
 }
 
 #contact h2 {
     color: #1e3a8a;
 }
 
+#contact h2::after {
+    background-color: #3b82f6;
+}
+
 /* FAQ Section */
 #faq {
-    supervisory-background-color: #ffffff;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 #faq h2 {
     color: #1e3a8a;
+}
+
+#faq h2::after {
+    background-color: #ea580c;
 }
 
 /* Blog Section */
@@ -322,6 +353,10 @@ section {
     color: #1e3a8a;
 }
 
+#blog h2::after {
+    background-color: #3b82f6;
+}
+
 /* CTA Section */
 .cta {
     background: linear-gradient(90deg, #1e3a8a, #3b82f6);
@@ -329,11 +364,16 @@ section {
     text-align: center;
     max-width: none;
     width: 100vw;
+    border-bottom: none; /* No divider for CTA */
 }
 
 .cta h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+}
+
+.cta h2::after {
+    background-color: #ea580c;
 }
 
 .cta .btn {
@@ -352,9 +392,8 @@ h2 {
 h2::after {
     content: '';
     display: block;
-    width: 80px;
+    width: 100px; /* Larger underline for emphasis */
     height: 4px;
-    background-color: #3b82f6;
     margin: 0.5rem auto;
 }
 
@@ -385,13 +424,13 @@ p {
     padding: 2rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Stronger shadow */
     border: 1px solid transparent;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
     border-color: #3b82f6;
 }
 
@@ -568,7 +607,7 @@ form:not(.hero-form) button:hover {
     }
 
     section {
-        padding: 3rem 1rem;
+        padding: 4rem 1rem; /* Adjusted for mobile */
     }
 
     .card {
